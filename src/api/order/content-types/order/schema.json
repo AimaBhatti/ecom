@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order_Id": {
+      "type": "uid",
+      "required": true
+    },
+    "grand_total": {
+      "required": true,
+      "type": "biginteger"
+    },
+    "order_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-detail.order-detail",
+      "inversedBy": "order"
+    },
+    "shipment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shipment.shipment",
+      "inversedBy": "order"
+    },
+    "transaction_Id": {
+      "type": "uid",
+      "required": false
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Confirmed",
+        "Cancelled",
+        "Deleted"
+      ],
+      "required": true
+    },
+    "paymentInfo": {
+      "type": "json"
+    }
+  }
+}
