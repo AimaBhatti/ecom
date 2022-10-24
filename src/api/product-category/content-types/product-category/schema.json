@@ -19,12 +19,6 @@
       "type": "string",
       "required": true
     },
-    "product_subcategories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product-subcategory.product-subcategory",
-      "mappedBy": "product_category"
-    },
     "products": {
       "type": "relation",
       "relation": "oneToMany",

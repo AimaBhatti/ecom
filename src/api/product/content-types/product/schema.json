@@ -34,10 +34,6 @@
         "audios"
       ]
     },
-    "size": {
-      "type": "integer",
-      "required": false
-    },
     "price": {
       "type": "biginteger",
       "required": true
@@ -53,12 +49,6 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::product-category.product-category",
-      "inversedBy": "products"
-    },
-    "product_subcategory": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product-subcategory.product-subcategory",
       "inversedBy": "products"
     },
     "slug": {
