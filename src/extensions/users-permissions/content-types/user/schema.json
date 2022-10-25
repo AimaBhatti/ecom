@@ -69,23 +69,27 @@
     },
     "contact": {
       "type": "biginteger",
-      "max": "11",
-      "min": "11"
+      "required": true
     },
     "address": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "area": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "city": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "state": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "country": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "cart": {
       "type": "relation",
@@ -93,13 +97,14 @@
       "target": "api::cart.cart",
       "inversedBy": "user"
     },
-    "first_name": {
-      "type": "string",
-      "required": false
-    },
-    "last_name": {
-      "type": "string",
-      "required": false
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ],
+      "required": true,
+      "default": "Male"
     }
   }
 }
