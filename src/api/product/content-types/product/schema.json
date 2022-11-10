@@ -35,7 +35,7 @@
       ]
     },
     "price": {
-      "type": "biginteger",
+      "type": "decimal",
       "required": true
     },
     "status": {
@@ -54,6 +54,9 @@
     "slug": {
       "type": "uid",
       "required": true
+    },
+    "discounted_price": {
+      "type": "biginteger"
     }
   }
 }

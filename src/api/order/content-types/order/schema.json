@@ -14,17 +14,18 @@
   "attributes": {
     "order_Id": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "minLength": 6
     },
     "grand_total": {
       "required": true,
-      "type": "biginteger"
+      "type": "decimal"
     },
     "order_detail": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::order-detail.order-detail",
-      "inversedBy": "order"
+      "inversedBy": "order_Id"
     },
     "shipment": {
       "type": "relation",
@@ -32,21 +33,27 @@
       "target": "api::shipment.shipment",
       "inversedBy": "order"
     },
-    "transaction_Id": {
-      "type": "uid",
-      "required": false
-    },
     "status": {
       "type": "enumeration",
       "enum": [
-        "Confirmed",
-        "Cancelled",
-        "Deleted"
+        "In Process",
+        "Shipped",
+        "Completed"
       ],
-      "required": true
+      "required": false,
+      "default": "In Process"
     },
     "paymentInfo": {
       "type": "json"
+    },
+    "user_Id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
