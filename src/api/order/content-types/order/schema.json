@@ -12,20 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "order_Id": {
-      "type": "uid",
-      "required": true,
-      "minLength": 6
-    },
-    "grand_total": {
-      "required": true,
-      "type": "decimal"
-    },
-    "order_detail": {
+    "order_details": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::order-detail.order-detail",
-      "inversedBy": "order_Id"
+      "mappedBy": "order_Id"
     },
     "shipment": {
       "type": "relation",
@@ -43,17 +34,27 @@
       "required": false,
       "default": "In Process"
     },
-    "paymentInfo": {
-      "type": "json"
-    },
-    "user_Id": {
+    "user_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "order"
     },
     "confirmed": {
       "type": "boolean",
       "default": false
+    },
+    "pay_type": {
+      "type": "enumeration",
+      "enum": [
+        "COD",
+        "Stripe",
+        "Easypaisa"
+      ],
+      "default": "COD"
+    },
+    "grand_total": {
+      "type": "string"
     }
   }
 }

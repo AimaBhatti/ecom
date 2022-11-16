@@ -99,6 +99,12 @@
     "contact": {
       "type": "text",
       "required": true
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "mappedBy": "user_id"
     }
   }
 }
