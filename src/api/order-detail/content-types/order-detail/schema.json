@@ -12,19 +12,22 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "products": {
+    "product": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
     },
-    "SubTotal": {
+    "subTotal": {
       "type": "decimal"
     },
-    "order_Id": {
+    "order": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::order.order",
       "inversedBy": "order_details"
+    },
+    "quantity": {
+      "type": "integer"
     }
   }
 }

@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "order_details": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order-detail.order-detail",
-      "mappedBy": "order_Id"
-    },
     "shipment": {
       "type": "relation",
       "relation": "oneToOne",
@@ -34,12 +28,6 @@
       "required": false,
       "default": "In Process"
     },
-    "user_id": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "order"
-    },
     "confirmed": {
       "type": "boolean",
       "default": false
@@ -50,11 +38,22 @@
         "COD",
         "Stripe",
         "Easypaisa"
-      ],
-      "default": "COD"
+      ]
     },
     "grand_total": {
       "type": "string"
+    },
+    "order_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-detail.order-detail",
+      "mappedBy": "order"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
     }
   }
 }
