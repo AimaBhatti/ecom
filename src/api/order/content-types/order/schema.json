@@ -52,6 +52,15 @@
     "user_id": {
       "type": "string",
       "required": true
+    },
+    "contact": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "username": {
+      "type": "string"
     }
   }
 }
