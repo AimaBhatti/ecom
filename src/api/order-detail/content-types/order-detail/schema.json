@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "product": {
+    "products": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
@@ -20,7 +20,7 @@
     "subTotal": {
       "type": "decimal"
     },
-    "order": {
+    "order_id": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::order.order",

@@ -30,7 +30,7 @@
     },
     "confirmed": {
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "pay_type": {
       "type": "enumeration",
@@ -40,20 +40,18 @@
         "Easypaisa"
       ]
     },
-    "grand_total": {
-      "type": "string"
-    },
     "order_details": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::order-detail.order-detail",
-      "mappedBy": "order"
+      "mappedBy": "order_id"
     },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "orders"
+    "grand_total": {
+      "type": "decimal"
+    },
+    "user_id": {
+      "type": "string",
+      "required": true
     }
   }
 }

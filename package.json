@@ -15,7 +15,8 @@
     "@strapi/provider-email-sendgrid": "^4.4.4",
     "@strapi/strapi": "4.4.3",
     "better-sqlite3": "7.4.6",
-    "pg": "^8.8.0"
+    "pg": "^8.8.0",
+    "twilio": "^3.83.3"
   },
   "author": {
     "name": "A Strapi developer"
