@@ -9,7 +9,7 @@
 //     const client = require("twilio")(accountSid, authToken);
 //     client.messages
 //       .create({
-//         body: "Hello Thanks for Your Order ",
+//         body: "Dear Customer! Thank you for trusting us and placing an order.",
 //         from: twilioNum, //the phone number provided by Twillio
 //         to: myNum, // your own phone number
 //       })

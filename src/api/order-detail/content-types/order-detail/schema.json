@@ -20,14 +20,14 @@
     "subTotal": {
       "type": "decimal"
     },
+    "quantity": {
+      "type": "integer"
+    },
     "order_id": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::order.order",
       "inversedBy": "order_details"
-    },
-    "quantity": {
-      "type": "integer"
     }
   }
 }

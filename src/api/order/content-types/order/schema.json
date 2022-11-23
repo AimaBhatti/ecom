@@ -40,18 +40,8 @@
         "Easypaisa"
       ]
     },
-    "order_details": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order-detail.order-detail",
-      "mappedBy": "order_id"
-    },
     "grand_total": {
       "type": "decimal"
-    },
-    "user_id": {
-      "type": "string",
-      "required": true
     },
     "contact": {
       "type": "string"
@@ -61,6 +51,12 @@
     },
     "username": {
       "type": "string"
+    },
+    "order_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-detail.order-detail",
+      "mappedBy": "order_id"
     }
   }
 }
