@@ -23,7 +23,8 @@
       "enum": [
         "In Process",
         "Shipped",
-        "Completed"
+        "Completed",
+        "Cancelled"
       ],
       "required": false,
       "default": "In Process"

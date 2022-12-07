@@ -57,9 +57,6 @@
     },
     "discounted_price": {
       "type": "biginteger"
-    },
-    "image_name": {
-      "type": "text"
     }
   }
 }
