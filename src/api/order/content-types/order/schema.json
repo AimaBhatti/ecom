@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "shipment": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::shipment.shipment",
-      "inversedBy": "order"
-    },
     "status": {
       "type": "enumeration",
       "enum": [
